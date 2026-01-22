@@ -1,34 +1,22 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);            //입력 하기 위한 객체 선언
-        int x = in.nextInt();                           // 영수증에 찍힌 총 금액
-        int n =  in.nextInt();                          // 구매 물건의 총 종류 갯수
-        int a,b;                                        // 물건의 가격과 물건 갯수
-        List<Integer> list = new ArrayList<>();         // 물건 종류별 구매가격을 담을 리스트 객체
-        int total = 0;                                  // 실제 구매한 총 금액
+        Scanner in  = new Scanner(System.in);
+        String object = "int";
+        int n ;
 
-        for (int i = 0; i < n; i++) {                   //n개의 종류만큼 반복하여
-            a = in.nextInt();
-            b = in.nextInt();
-            list.add(a*b);                              //각 종류별 물건의 구매 금액을 리스트에 담음.
+        while(true) {
+            n =  in.nextInt();
+            if(n % 4 == 0) {
+                break;
+            }
+            System.out.println("재입력");
         }
 
-        for(Integer i : list) {                        //실제 구매한 물건의 총 금액 구하기
-            total =  total + i;
+        for(int i = 0; i < n; i+=4) {
+            object = "long " + object;
         }
-                                                        //실제 총 금액과 영수증에 찍힌 금액 비교하여 출력
-        if(total == x) {
-            System.out.println("Yes");
-        }else {
-            System.out.println("No");
-        }
-
+        System.out.println(object);
     }
 }
