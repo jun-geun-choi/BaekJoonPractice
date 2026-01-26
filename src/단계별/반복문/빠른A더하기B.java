@@ -1,3 +1,5 @@
+package 단계별.반복문;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -7,7 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main {
+/** [입력]            [출력]
+ * 5
+ * 1 1                  2
+ * 12 34                46
+ * 5 500                505
+ * 40 60                100
+ * 1000 1000            2000
+ */
+
+public class 빠른A더하기B {
     public static void main(String[] args) throws IOException {
 
         // 입력 받기 위한 BufferedReader 객체
@@ -43,6 +54,6 @@ public class Main {
         bw.flush();
         //버퍼 닫기
         bw.close();
-
     }
+
 }
