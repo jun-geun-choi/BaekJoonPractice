@@ -3,15 +3,18 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner in  = new Scanner(System.in);
-        int count; // 별을 몇 줄까지 찍을지 입력 받을 변수 선언
+        Scanner s = new Scanner(System.in);
+        int n;
+        n = s.nextInt();
 
-        count = in.nextInt();
-        String star = "*"; // 콘솔에 찍을 별
-
-        for(int i = 0; i < count; i++){ // count 만큼 반복 해서
-            System.out.println(star);
-            star += "*";
+        for (int i = 1; i <= n; i++){
+            for(int j = 1; j <= n - i; j++){
+                System.out.print(" ");
+            }
+            for(int k = 1; k <= i; k++){
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 }
