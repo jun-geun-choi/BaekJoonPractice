@@ -1,6 +1,6 @@
-import java.util.Scanner;
+package 프로그래머스;
 
-public class Solution {
+public class 정수자릿수별계산 {
 
     /**
      * 입력 받은 정수에서 각 자릿수의 합을 구한다. 123 =>  6
@@ -19,24 +19,5 @@ public class Solution {
         return answer;
     }
 
-    public static void main(String[] args) {
-        int answer = 0;
-        int n = 1234;
-
-        while (true) {
-            answer += n % 10;
-            if (n < 10) {
-                break;
-            }
-
-            n = n / 10;
-        }
-
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("Hello Java");
-        System.out.println(answer);
-
-
-    }
 
 }
