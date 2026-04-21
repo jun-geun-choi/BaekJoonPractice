@@ -8,34 +8,25 @@ public class Solution {
      * @param n 입력 받은 정수
      * @return
      */
-    public int solution(int n) {
-        int answer = 0;   // 최종 결과를 저장할 변수.
+    public Long[] solution(long n) {
+        String strN = Long.toString(n);     // 전달 받은 정수를 문자열로 변환 한 다음,
+        Long []answer = new Long[strN.length()]; // 문자열로 변환한 정수의 사이즈 만큼의 배열을 가지도록 초기화
 
-        while (n != 0) {       // n이 0이 될 때까지 계속 반복한다.
-            answer += n % 10; // n을 10으로 나누어 그 나머지를 answer에 저장한다.
-            n /= 10;          // 위 계산 이후, n을 다시 10으로 나누어 나온 몫을 다시 n에 저장한다.
+        for(int i = 0; i < strN.length(); i++) {
+            answer[i] = n % 10;
+            n = n / 10;
         }
 
         return answer;
     }
 
     public static void main(String[] args) {
-        int answer = 0;
-        int n = 1234;
-
-        while (true) {
-            answer += n % 10;
-            if (n < 10) {
-                break;
-            }
-
-            n = n / 10;
+        Solution solution = new Solution();
+        long n = 123456789L;
+        Long [] answer = solution.solution(n);
+        for(int  i = 0; i < answer.length; i++) {
+            System.out.println(answer[i]);
         }
-
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("Hello Java");
-        System.out.println(answer);
-
 
     }
 
